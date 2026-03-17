@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: monitoring-agent
+
+# Agent配置
+agent:
+  # 服务端地址
+  server:
+    url: http://your-server-domain:8080
+    report-url: /api/agent/report
+    heartbeat-url: /api/agent/heartbeat
+  
+  # Agent身份认证
+  identity:
+    server-ip: ${AGENT_SERVER_IP:}
+    agent-key: ${AGENT_KEY:default-key-change-in-production}
+  
+  # 采集配置
+  collection:
+    # 采集间隔（秒）
+    interval: 60
+    # 心跳间隔（秒）
+    heartbeat-interval: 30
+  
+  # 监控项开关
+  monitoring:
+    server: true
+    mysql: true
+    tomcat: true
+  
+  # MySQL监控配置
+  mysql:
+    host: localhost
+    port: 3306
+    username: root
+    password: 
+    database: mysql
+  
+  # Tomcat监控配置
+  tomcat:
+    host: localhost
+    port: 8080
+    username: admin
+    password: 
+
+# 日志配置
+logging:
+  level:
+    com.monitoring.agent: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/agent.log
