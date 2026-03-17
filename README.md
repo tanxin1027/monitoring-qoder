@@ -7,7 +7,8 @@
 ```
 monitoring-qoder/
 ├── monitoring-server/    # 监控服务端（部署在云服务器）
-└── monitoring-agent/     # 监控Agent（部署在医院内网服务器）
+├── monitoring-agent/     # 监控Agent（部署在医院内网服务器）
+└── monitoring-web/       # 前端管理界面（Vue 3 + Element Plus）
 ```
 
 ## 技术栈
@@ -25,6 +26,13 @@ monitoring-qoder/
 - **系统信息**: OSHI (Operating System and Hardware Information)
 - **HTTP客户端**: WebFlux
 - **JDK**: 17
+
+### 前端 (monitoring-web)
+- **框架**: Vue 3 + Vite
+- **UI组件库**: Element Plus
+- **图表库**: ECharts
+- **状态管理**: Pinia
+- **路由**: Vue Router
 
 ## 功能特性
 
@@ -218,7 +226,7 @@ monitoring-agent/
 
 ## 开发计划
 
-- [ ] 前端管理界面
+- [x] 前端管理界面
 - [ ] 告警通知（邮件/短信）
 - [ ] 数据报表导出
 - [ ] 集群监控支持

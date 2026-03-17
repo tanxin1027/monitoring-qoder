@@ -16,6 +16,7 @@
     <modules>
         <module>monitoring-server</module>
         <module>monitoring-agent</module>
+        <module>monitoring-web</module>
     </modules>
 
     <properties>
