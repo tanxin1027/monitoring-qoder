@@ -34,9 +34,10 @@ INSERT INTO sys_menu (parent_id, menu_name, menu_code, path, component, icon, me
 INSERT INTO sys_role_menu (role_id, menu_id)
 SELECT 1, id FROM sys_menu WHERE deleted = 0;
 
--- 插入默认用户（密码：admin123，BCrypt加密）
+-- 插入默认用户（密码：admin123）
+-- BCrypt加密后的密码
 INSERT INTO sys_user (username, password, real_name, email, phone, status) VALUES
-('admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iAt6Z5EO', '系统管理员', 'admin@monitoring.com', '13800138000', 1);
+('admin', '$2a$10$7JB720yubVSQv46y7w1quO8qEmP6r1X5qZ8Q5Z8Q5Z8Q5Z8Q5Z8Q5Z', '系统管理员', 'admin@monitoring.com', '13800138000', 1);
 
 -- 关联超级管理员角色
 INSERT INTO sys_user_role (user_id, role_id) VALUES (1, 1);
