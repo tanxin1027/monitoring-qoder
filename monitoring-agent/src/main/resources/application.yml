@@ -6,13 +6,13 @@ spring:
 agent:
   # 服务端地址
   server:
-    url: http://your-server-domain:8080
+    url: http://localhost:8080
     report-url: /api/agent/report
     heartbeat-url: /api/agent/heartbeat
   
   # Agent身份认证
   identity:
-    server-ip: ${AGENT_SERVER_IP:}
+    server-ip: ${localhost:}
     agent-key: ${AGENT_KEY:default-key-change-in-production}
   
   # 采集配置
@@ -33,7 +33,7 @@ agent:
     host: localhost
     port: 3306
     username: root
-    password: 
+    password: 123456
     database: mysql
   
   # Tomcat监控配置

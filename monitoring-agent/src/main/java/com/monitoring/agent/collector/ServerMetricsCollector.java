@@ -3,6 +3,7 @@ package com.monitoring.agent.collector;
 import com.monitoring.agent.config.AgentProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.GlobalMemory;
@@ -31,6 +32,7 @@ public class ServerMetricsCollector {
     private final AgentProperties agentProperties;
     private final SystemInfo systemInfo;
 
+    @Autowired
     public ServerMetricsCollector(AgentProperties agentProperties) {
         this.agentProperties = agentProperties;
         this.systemInfo = new SystemInfo();

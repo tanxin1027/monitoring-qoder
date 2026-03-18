@@ -32,9 +32,9 @@ public class DashboardController {
         Map<String, Object> statistics = new HashMap<>();
         
         // 服务器统计
-        Integer totalServers = serverMapper.selectCount(null);
+        Long totalServers = serverMapper.selectCount(null);
         Integer onlineServers = serverMapper.countByStatus(1);
-        Integer offlineServers = totalServers - onlineServers;
+        Long offlineServers = totalServers - onlineServers;
         
         statistics.put("totalServers", totalServers);
         statistics.put("onlineServers", onlineServers);
