@@ -18,19 +18,16 @@ import java.util.Map;
  */
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class DataSender {
 
     private final AgentProperties agentProperties;
     private final ObjectMapper objectMapper;
     private final WebClient webClient;
 
-    public DataSender(AgentProperties agentProperties, ObjectMapper objectMapper) {
+    public DataSender(AgentProperties agentProperties, ObjectMapper objectMapper, WebClient webClient) {
         this.agentProperties = agentProperties;
         this.objectMapper = objectMapper;
-        this.webClient = WebClient.builder()
-                .baseUrl(agentProperties.getServer().getUrl())
-                .build();
+        this.webClient = webClient;
     }
 
     /**

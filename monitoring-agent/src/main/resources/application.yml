@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: monitoring-agent
@@ -17,16 +20,16 @@ agent:
   
   # 采集配置
   collection:
-    # 采集间隔（秒）
-    interval: 60
-    # 心跳间隔（秒）
-    heartbeat-interval: 30
+    # 采集间隔（毫秒）
+    interval: 60000
+    # 心跳间隔（毫秒）
+    heartbeat-interval: 30000
   
   # 监控项开关
   monitoring:
     server: true
     mysql: true
-    tomcat: true
+    tomcat: false  # 暂时禁用 Tomcat 监控
   
   # MySQL监控配置
   mysql:
